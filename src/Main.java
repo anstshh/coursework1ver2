@@ -19,13 +19,13 @@ public class Main {
     }
 
 
-    public static String resultNameToString(Employee[] employee, int id) {
+    public static Object resultNameToString(Employee[] employee, int id) {
         for (int i = 0; i < employee.length; i++) {
             if (employee[i].getEmployeeID() == id) {
                 return employee[i].toString();
             }
         }
-        return "none";
+        return null;
     }
 
 
