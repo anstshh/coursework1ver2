@@ -79,7 +79,7 @@ public class Main {
         employee[6] = new Employee("Hall Jow", 1, 5250);
         employee[7] = new Employee("Sean Dean", 2, 2400);
         employee[8] = new Employee("Dean Sean", 3, 2300);
-        employee[9] = new Employee("Ursula Ten", 4, 2500);
+        employee[9] = new Employee("Ursula Tenn", 4, 2500);
 
 
 
