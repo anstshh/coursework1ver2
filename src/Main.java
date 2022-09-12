@@ -91,14 +91,14 @@ public class Main {
 
     public static double calculateAverageSalary(Employee[] employee) {
         int counter = 0;
-        int sumSalaryAverage = 0;
+        double sumSalaryAverage = 0;
         for (int i = 0; i < employee.length; i++) {
             if (employee != null) {
                 counter++;
                 sumSalaryAverage += employee[i].getSalary();
             }
         }
-        return (double) sumSalaryAverage / counter;
+        return sumSalaryAverage / counter;
 
 
     }
