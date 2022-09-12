@@ -1,6 +1,31 @@
 import coursework.Employee;
 
+
 public class Main {
+
+    public static void main(String[] args) {
+        Employee[] employee = new Employee[10];
+
+        employee[0] = new Employee("Miranda Lawson", 1, 1000);
+        employee[1] = new Employee("Sarah Thomas", 2, 500);
+        employee[2] = new Employee("Billy Brown", 3, 1100);
+        employee[3] = new Employee("Esther Carol", 4, 2000);
+        employee[4] = new Employee("Robert Son", 5, 2400);
+        employee[5] = new Employee("Thomas Hol", 5, 1110);
+        employee[6] = new Employee("Hall Jow", 1, 5250);
+        employee[7] = new Employee("Sean Dean", 2, 2400);
+        employee[8] = new Employee("Dean Sean", 3, 2300);
+        employee[9] = new Employee("Ursula Ten", 4, 2500);
+
+
+        System.out.println(printIdentityInfo(employee));
+        System.out.println(printFullName(employee));
+        System.out.println("Sum of all salaries = " + salarySum(employee));
+        System.out.println("Average salary = " + calculateAverageSalary(employee));
+        System.out.println("Minimum salary " + printNameSurname (employee, salaryMin(employee)));
+        System.out.println("Maximum salary " + printNameSurname(employee, salaryMax(employee)));
+
+    }
 
     public static String printIdentityInfo (Employee[] employee) {
         double identityInfo = 0;
@@ -48,10 +73,7 @@ public class Main {
 
         }
         return minValue1;
-    }
 
-    public static double salaryAverage(Employee[] employee) {
-        return salarySum(employee) / employee.length;
     }
 
     public static double salaryMax(Employee[] employee) {
@@ -67,30 +89,21 @@ public class Main {
         return maxValue1;
     }
 
-    public static void main(String[] args) {
-        Employee[] employee = new Employee[10];
+    public static double calculateAverageSalary(Employee[] employee) {
+        int counter = 0;
+        int sumSalaryAverage = 0;
+        for (int i = 0; i < employee.length; i++) {
+            if (employee != null) {
+                counter++;
+                sumSalaryAverage += employee[i].getSalary();
+            }
+        }
+        return (double) sumSalaryAverage / counter;
 
-        employee[0] = new Employee("Miranda Lawson", 1, 1000);
-        employee[1] = new Employee("Sarah Thomas", 2, 500);
-        employee[2] = new Employee("Billy Brown", 3, 1100);
-        employee[3] = new Employee("Esther Carol", 4, 2000);
-        employee[4] = new Employee("Robert Son", 5, 2400);
-        employee[5] = new Employee("Thomas Hol", 5, 1110);
-        employee[6] = new Employee("Hall Jow", 1, 5250);
-        employee[7] = new Employee("Sean Dean", 2, 2400);
-        employee[8] = new Employee("Dean Sean", 3, 2300);
-        employee[9] = new Employee("Ursula Ten", 4, 2500);
-
-
-
-        System.out.println(printFullName(employee));
-        System.out.println(printIdentityInfo(employee));
-        System.out.println("salary sum = " + salarySum(employee));
-        System.out.println("average salary = " + salaryAverage(employee));
-        System.out.println("min salary " + printNameSurname (employee, salaryMin(employee)));
-        System.out.println("max salary " + printNameSurname(employee, salaryMax(employee)));
 
     }
+
+
 
 
 }

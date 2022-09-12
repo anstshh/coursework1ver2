@@ -8,12 +8,6 @@ public class Employee {
     private int employeeId;
     private static int counter = 0;
 
-    public Employee(String name, int department, double salary) {
-        this.name = name;
-        this.department = department;
-        this.salary = salary;
-        this.employeeId = ++counter;
-    }
 
 
     public String getName() {
@@ -46,6 +40,14 @@ public class Employee {
     public int getEmployeeId() {
         return employeeId;
     }
+
+    public Employee(String name, int department, double salary) {
+        this.name = name;
+        this.department = department;
+        this.salary = salary;
+        this.employeeId = ++counter;
+    }
+
 
     @Override
     public String toString() {
