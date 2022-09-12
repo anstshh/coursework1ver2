@@ -70,7 +70,7 @@ public class Main {
     public static void main(String[] args) {
         Employee[] employee = new Employee[10];
 
-        employee[0] = new Employee("Miranda Lawson", 1, 1000); // и таких ровно 10
+        employee[0] = new Employee("Miranda Lawson", 1, 1000);
         employee[1] = new Employee("Sarah Thomas", 2, 500);
         employee[2] = new Employee("Billy Brown", 3, 1100);
         employee[3] = new Employee("Esther Carol", 4, 2000);
