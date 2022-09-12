@@ -5,14 +5,14 @@ public class Employee {
     private String name;
     private int department;
     private double salary;
-    private int employeeID;
-    private static int uniqueID = Integer.parseInt("0");
+    private int employeeId;
+    private static int counter = 0;
 
     public Employee(String name, int department, double salary) {
         this.name = name;
         this.department = department;
         this.salary = salary;
-        employeeID = Employee.getNextUniqueID();
+        this.employeeId = ++counter;
     }
 
 
@@ -42,20 +42,9 @@ public class Employee {
         return salary;
     }
 
-    //public void salaryRaise(double percentage) {
-    // double raise = salary * percentage / 100;
-    // salary += raise;
-    //}
 
-    public static int getNextUniqueID() {
-        int id = Integer.parseInt(String.valueOf(uniqueID));
-        ++id;
-        uniqueID = Integer.parseInt(Integer.toString(id));
-        return Integer.parseInt(String.valueOf(uniqueID));
-    }
-
-    public int getEmployeeID() {
-        return employeeID;
+    public int getEmployeeId() {
+        return employeeId;
     }
 
     @Override
@@ -64,7 +53,7 @@ public class Employee {
                 "name='" + name + '\'' +
                 ", department=" + department +
                 ", salary=" + salary +
-                ", employeeID='" + employeeID + '\'' +
+                ", employeeID='" + employeeId + '\'' +
                 '}';
     }
 }

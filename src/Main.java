@@ -2,26 +2,26 @@ import coursework.Employee;
 
 public class Main {
 
-    public static String resultPersonalData(Employee[] employee) {
-        double tmp1 = 0;
-        String tmp = employee[0].getName();
+    public static String printIdentityInfo (Employee[] employee) {
+        double identityInfo = 0;
+        String identityInfo1 = employee[0].getName();
         for (int i = 1; i < employee.length; i++) {
-            tmp1 = employee[i].getEmployeeID();
+            identityInfo = employee[i].getEmployeeId();
             System.out.println(employee[i].getName());
         }
-        return tmp;
+        return identityInfo1;
     }
 
-    public static int resultFullName(Employee[] employee) {
+    public static int printFullName(Employee[] employee) {
         for (int i = 0; i < employee.length; i++)
             System.out.println(employee[i].toString());
         return 0;
     }
 
 
-    public static Object resultNameToString(Employee[] employee, int id) {
+    public static String printNameSurname(Employee[] employee, double id) {
         for (int i = 0; i < employee.length; i++) {
-            if (employee[i].getEmployeeID() == id) {
+            if (employee[i].getEmployeeId() == id) {
                 return employee[i].toString();
             }
         }
@@ -37,34 +37,34 @@ public class Main {
         return sum;
     }
 
-    public static int salaryMin(Employee[] employee) {
-        int tmp1 = 0;
-        double tmp = employee[0].getSalary();
+    public static double salaryMin(Employee[] employee) {
+        double minValue1= 0;
+        double minValue = employee[0].getSalary();
         for (int i = 1; i < employee.length; i++) {
-            if (tmp > employee[i].getSalary()) {
-                tmp1 = employee[i].getEmployeeID();
-                tmp = employee[i].getSalary();
+            if (minValue > employee[i].getSalary()) {
+                minValue1 = employee[i].getEmployeeId();
+                minValue = employee[i].getSalary();
             }
 
         }
-        return tmp1;
+        return minValue1;
     }
 
     public static double salaryAverage(Employee[] employee) {
         return salarySum(employee) / employee.length;
     }
 
-    public static int salaryMax(Employee[] employee) {
-        int tmp1 = 0;
-        double tmp = employee[0].getSalary();
+    public static double salaryMax(Employee[] employee) {
+        double maxValue1 = 0;
+        double maxValue = employee[0].getSalary();
         for (int i = 1; i < employee.length; i++) {
-            if (tmp < employee[i].getSalary()) {
-                tmp1 = employee[i].getEmployeeID();
-                tmp = employee[i].getSalary();
+            if (maxValue < employee[i].getSalary()) {
+                maxValue1 = employee[i].getEmployeeId();
+                maxValue = employee[i].getSalary();
             }
 
         }
-        return tmp1;
+        return maxValue1;
     }
 
     public static void main(String[] args) {
@@ -83,12 +83,12 @@ public class Main {
 
 
 
-        System.out.println(resultFullName(employee));
-        System.out.println(resultPersonalData(employee));
-        System.out.println("sum = " + salarySum(employee));
-        System.out.println("ave = " + salaryAverage(employee));
-        System.out.println(" min " + resultNameToString(employee, salaryMin(employee)));
-        System.out.println(" max " + resultNameToString(employee, salaryMax(employee)));
+        System.out.println(printFullName(employee));
+        System.out.println(printIdentityInfo(employee));
+        System.out.println("salary sum = " + salarySum(employee));
+        System.out.println("average salary = " + salaryAverage(employee));
+        System.out.println("min salary " + printNameSurname (employee, salaryMin(employee)));
+        System.out.println("max salary " + printNameSurname(employee, salaryMax(employee)));
 
     }
 
